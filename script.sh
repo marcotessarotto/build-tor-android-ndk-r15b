@@ -40,6 +40,8 @@ cd openssl-1.1.0f
 make depend
 
 make all
+
+sudo -E make install CC=$ANDROID_TOOLCHAIN/arm-linux-androideabi-gcc RANLIB=$ANDROID_TOOLCHAIN/arm-linux-androideabi-ranlib
  
 cd ..
 
@@ -121,7 +123,7 @@ export OBJDUMP=$HOST-objdump
 
 
 export CPPFLAGS="--sysroot=$NDK_TOOLCHAIN/sysroot -I$NDK_TOOLCHAIN/sysroot/usr/include -I$NDK_TOOLCHAIN/include -I../include -L../lib "
-export LDFLAGS="-L$NDK_TOOLCHAIN/sysroot/usr/lib -L$NDK_TOOLCHAIN/lib"
+export LDFLAGS="-L$NDK_TOOLCHAIN/sysroot/usr/lib -L$NDK_TOOLCHAIN/lib -L../lib"
 
  
 export CC="$HOST-gcc -D__ANDROID_API__=16  "
@@ -134,7 +136,7 @@ export CXX="$HOST-g++ -D__ANDROID_API__=16  "
 
 make
 
-
+#tests fail on compilation, but tor is built (in src/or/tor)
 
 cd ..
 
