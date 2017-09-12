@@ -35,7 +35,7 @@ wget https://www.openssl.org/source/openssl-1.1.0f.tar.gz
 tar -xvzf openssl-1.1.0f.tar.gz 
 cd openssl-1.1.0f
 
-./config shared no-ssl2 no-ssl3 no-comp no-hw no-engine --openssldir=/usr/local/ssl/android-16/
+./config shared no-ssl2 no-ssl3 no-comp no-hw --openssldir=/usr/local/ssl/android-16/
  
 make depend
 
