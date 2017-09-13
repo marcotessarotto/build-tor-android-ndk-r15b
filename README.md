@@ -2,8 +2,11 @@
 build tor 0.3.2.0 alpha-dev on Android NDK r15b
 
 Using:
+
 openssl1.1.0f
+
 libevent 2.0.23stable
+
 latest tor (currently 0.3.2.0 alpha-dev)
 
 
