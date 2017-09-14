@@ -95,6 +95,7 @@ cd ..
 echo "BUILD TOR" 
 git clone https://github.com/torproject/tor
 cd tor/
+#git checkout remotes/origin/maint-0.3.1
 
 
 echo "SETTING UP CROSS COMPILER"
