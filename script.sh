@@ -142,43 +142,10 @@ cd ..
 
 
 
-exit
 
 
 
 
-
-
-	#Build JTorControl
-	cd libs
-	git clone git://git.torproject.org/git/jtorctl
-#        git clone https://gitweb.torproject.org/tor.git
-	cd jtorctl
-	mkdir bin
-	javac net/freehaven/tor/control/TorControlConnection.java -d bin
-	cd bin
-	jar cvf jtorctrl.jar *
-	cp jtorctrl.jar ../..
-	cd ../../..
-
-	#BUILD privoxy
-	mkdir native/privoxy
-	cd native/privoxy
-	wget http://sourceforge.net/projects/ijbswa/files/Sources/3.0.12%20%28stable%29/privoxy-3.0.12-stable-src.tar.gz/download
-	tar xzvf download
-	cd privoxy-3.0.12-stable
-	autoheader
-	autoconf
-	#need to disable setpgrp check in configure
-	export ac_cv_func_setpgrp_void=yes
- 	./configure --host=arm-linux-eabi --build=$BUILD --prefix=$NDK_TOOLCHAIN --disable-pthread
-	make clean
-	make
-	cd ../../..
-
-	mkdir assets
-	cp native/privoxy/privoxy-3.0.12-stable/privoxy assets
-	cp native/tor/src/or/tor assets
 
 
 
